@@ -1,8 +1,9 @@
 FROM node:current-alpine3.11
 
-WORKDIR /usr/app
+RUN mkdir -p /app/back
+WORKDIR /app/back
 
-COPY package.json ./
+COPY package*.json ./
 RUN npm install
 
 COPY . .
