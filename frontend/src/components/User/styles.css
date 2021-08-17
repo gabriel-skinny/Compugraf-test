@@ -1,0 +1,42 @@
+.user {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  padding: 5px 10px;
+}
+
+.user .detail {
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+}
+
+.user .detail img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.user .detail nav {
+  margin-left: 20px;
+}
+
+.user .detail nav p {
+  margin-top: -15px;
+}
+
+.user button {
+  height: 40px;
+  width: 55px;
+
+  background: #fff;
+  border: 1px solid rgb(180, 167, 167);
+  border-radius: 5px;
+
+  margin-right: 10px;
+}
