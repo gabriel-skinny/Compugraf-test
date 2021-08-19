@@ -1,0 +1,13 @@
+{
+  "name": "estagio-teste",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "test": "echo \"Error: no test specified\" && exit 1"
+ },
+  "repository": "https://github.com/gabriel-skinny/Compugraf-test.git",
+  "author": "gabriel-skinny <gabrielcatoni12@gmail.com.br>",
+  "license": "MIT"
+}
