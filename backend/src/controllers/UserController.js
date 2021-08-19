@@ -5,8 +5,16 @@ module.exports = {
     const data = req.body;
 
     const userExists = await User.findOne({ where: { email: data.email }})
-        
-    if(userExists) res.status(400).json({ error: "User already exists"});
+    
+    if(userExists) {
+      return res.status(400).json({ error: "E-mail already in use"});     
+    } 
+
+    const cpfUsed = await User.findOne({ where: { cpf: data.cpf }});
+
+    if(cpfUsed) {
+      return res.status(400).json({ error: "CPF already used"});
+    }
 
     await User.create(data);
 
@@ -15,6 +23,18 @@ module.exports = {
 
   async list(req, res){
     const users = await User.findAll();
+
+    return res.json(users)
+  },
+
+  async consult(req, res){
+    const { id } = req.params;
+    
+    const users = await User.findOne({where: { id }});
+
+    if(!users) {
+      return res.status(400).json({ error: "User not found"});     
+    }  
 
     return res.json(users)
   },
@@ -28,7 +48,21 @@ module.exports = {
     if (user.email !== data.email) {
       const userExists = await User.findOne({ where: { email: data.email}});
 
-      if(userExists) res.status(400).json({ error: "E-mail already in use"});    
+      if(userExists) {
+        return res.status(400).json({ error: "E-mail already in use"}); 
+      }   
+    }
+
+    if (user.cpf != data.cpf) {
+      console.log({
+        usercpf: user.cpf,
+        data: data.cpf
+      })
+      const cpfUsed = await User.findOne({ where: { cpf: data.cpf}});
+
+      if(cpfUsed) {
+        return res.status(400).json({ error: "CPF already used"});
+      };    
     }
 
     await user.update(data);
@@ -41,7 +75,9 @@ module.exports = {
  
     const user = await User.findByPk(id);
 
-    if (!user) res.status(400).json({ error: "User does not exists"});
+    if (!user) {
+      return res.status(400).json({ error: "User does not exists"});
+    };
 
     await user.destroy();
 
