@@ -22,21 +22,30 @@
   border-radius: 50%;
 }
 
-.user .detail nav {
+.user .detail button {
   margin-left: 20px;
+  border: 0;
+  background: transparent;
+  
+  text-align: left;
 }
 
-.user .detail nav p {
+.user .detail button p {
   margin-top: -15px;
 }
 
-.user button {
+.user .buttons button {
   height: 40px;
-  width: 55px;
+  width: 60px;
 
   background: #fff;
   border: 1px solid rgb(180, 167, 167);
   border-radius: 5px;
 
   margin-right: 10px;
+}
+
+.user .buttons button.delete {
+  background:  rgb(255, 54, 54);
+  color: #fff;
 }

@@ -1,0 +1,63 @@
+form {
+  width: 500px;
+  height: 720px;
+
+  background: #fff;
+  border-radius: 25px;
+  box-sizing: border-box;
+
+  margin: 100px auto 0;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+} 
+
+form h1{
+  width: 100%;
+  margin-bottom: -15px;
+}
+
+form input {
+  height: 40px;
+  width: 160px;
+  
+  border: 0;
+  border-bottom: 1px solid #ccc;
+
+  outline: 0;
+  
+  padding: 0 15px;
+  margin: 10px 0;
+
+  font-size: 14px;
+}
+
+form .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+form .buttons button {
+  height: 50px;
+  width: 120px;
+
+  border-radius: 5px;
+  border: 0;
+
+  margin-left: 15px;
+}
+
+form .buttons button.enviar {
+  background-color: #4f48e5;
+  color: #fff;
+}
+
+form.error {
+  border: 1px solid rgb(228, 49, 49);
+}
