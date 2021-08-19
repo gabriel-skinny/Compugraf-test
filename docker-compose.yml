@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+    postgres:
+        image: postgres:12.1
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_PASSWORD: mypassword
+            POSTGRES_USER: gabriel
+            POSTGRES_DB: postgres-db1
+    service:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        ports:
+            - "3333:3333"
+    ui:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
