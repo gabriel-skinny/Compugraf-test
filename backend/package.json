@@ -5,7 +5,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "docker:build": "docker build -t node-test .",
+    "docker:run": "docker run -p 3333:3333 -d node-test",
+    "sequelize:create": "yarn sequelize db:create",
+    "sequelize:migrate": "yarn sequelize db:migrate"
   },
   "dependencies": {
     "cors": "^2.8.5",

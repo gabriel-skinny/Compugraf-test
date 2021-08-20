@@ -16,6 +16,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "docker:build": "docker build -t react-test .",
+    "docker:run": "docker run -p 3000:3000 -d react-test",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
